@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: widget, widgets, search, archive, archives, category, categories, pages, shortcode, shortcodes, bloginfo, iframe
 Requires at least: 4.0
-Tested up to: 6.4.2
-Stable tag: 1.7
+Tested up to: 6.6.2
+Stable tag: 1.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -105,7 +105,30 @@ Widgets: search, archives and categories. Shortcodes: archives, bloginfo, iframe
 * **any_other_empty_param** - allows to add new empty parameter of the iframe (like "allowfullscreen" on youtube) `[sitekit_iframe any_other_empty_param=""]`;
 
 
+= Parameters for [sitekit_menu]: =
+The `[sitekit_menu]` shortcode allows you to display a custom menu. It supports all the parameters of the WordPress [wp_nav_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) function.
+
+* **menu** - The menu that should be displayed. Accepts (matching in order) id, slug, name. Default: empty. Example: `[sitekit_menu menu="main-menu"]`
+* **container** - Whether to wrap the ul, and what to wrap it with. Default 'div'. Example without a container: `[sitekit_menu menu="main-menu" container=""]`
+* **container_class** - The class that is applied to the container. Default 'menu-{menu slug}-container'. Example: `[sitekit_menu menu="main-menu" container_class="custom-container"]`
+* **container_id** - The ID that is applied to the container. Default empty.
+* **menu_class** - CSS class to use for the ul element which forms the menu. Default 'menu'.  Example: `[sitekit_menu menu="main-menu" menu_class="custom-menu"]`
+* **menu_id** - The ID that is applied to the ul element. Default empty.
+* **echo** - Whether to echo the menu or return it. Default false.
+* **fallback_cb** - If the menu doesn't exist, a callback function will fire. Default 'wp_page_menu'.
+* **before** - Text before the link markup. Default empty.
+* **after** - Text after the link markup. Default empty.
+* **link_before** - Text before the link text. Default empty.
+* **link_after** - Text after the link text. Default empty.
+* **items_wrap** - How the list items should be wrapped. Default `<ul id="%1$s" class="%2$s">%3$s</ul>`.
+* **depth** - How many levels of the hierarchy are to be included. 0 means all. Default 0. Example: `[sitekit_menu menu="primary-menu" depth="2"]`
+* **walker** - Custom walker object to use. Default empty.
+
+
 == Changelog ==
+
+= 1.8 =
+* Added [sitekit_menu] shortcode.
 
 = 1.7 =
 * Removed srcdoc iframe param for security reasons.
